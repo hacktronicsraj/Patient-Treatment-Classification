@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Treatment Classification</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Optional result styling */
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="/predict">
+        <h1>Patient In OR Out Calculator</h1>
+
+        {% if result %}
+        <p class="result">{{ result }}</p>
+        {% endif %}
+
+        <label for="HAEMATOCRIT">HAEMATOCRIT:</label>
+        <input type="text" id="HAEMATOCRIT" name="HAEMATOCRIT"><br><br>
+
+        <label for="HAEMOGLOBINS">HAEMOGLOBINS:</label>
+        <input type="text" id="HAEMOGLOBINS" name="HAEMOGLOBINS"><br><br>
+
+        <label for="ERYTHROCYTE">ERYTHROCYTE:</label>
+        <input type="text" id="ERYTHROCYTE" name="ERYTHROCYTE"><br><br>
+
+        <label for="LEUCOCYTE">LEUCOCYTE:</label>
+        <input type="text" id="LEUCOCYTE" name="LEUCOCYTE"><br><br>
+
+        <label for="THROMBOCYTE">THROMBOCYTE:</label>
+        <input type="text" id="THROMBOCYTE" name="THROMBOCYTE"><br><br>
+
+        <label for="Age">Age:</label>
+        <input type="text" id="Age" name="Age"><br><br>
+
+        <label for="Sex">Gender:</label>
+        <input type="text" id="Sex" name="Sex"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+
+</html>
